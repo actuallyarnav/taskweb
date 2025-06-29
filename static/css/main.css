@@ -3,3 +3,27 @@ body {
     font-family: sans-serif;
     background-color: white;
 }
+
+.content {
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+table,
+th,
+td {
+    margin: 0 auto;
+    border-collapse: collapse;
+    border: 1px solid;
+    border-spacing: 0;
+
+    text-align: center;
+    padding: 10px;
+}
+
+.form {
+    padding-top: 20px;
+    size: 0 auto;
+}
