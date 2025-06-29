@@ -1,6 +1,8 @@
+import os
 from flask import Flask, redirect, render_template, request
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime, UTC
+#from app import db
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///test.db"
@@ -57,4 +59,11 @@ def update(id):
         return render_template('update.html', task = task)
 
 if __name__ == "__main__":
+    db_path = os.path.join(os.path.dirname(__file__), 'instance', 'test.db')
+    if not os.path.exists(db_path):
+        os.makedirs(os.path.dirname(db_path), exist_ok=True)
+        with app.app_context():
+            db.create_all()
+            print("Database created.")
+
     app.run(debug=True)
