@@ -61,6 +61,12 @@ def update(id):
     else:
         return render_template('update.html', task = task)
 
+#checks if the app runs properly
+@app.route("/health")
+def health():
+    return "OK", 200
+
+
 if __name__ == "__main__":
     db_path = os.path.join(os.path.dirname(__file__), 'instance', 'test.db')
     if not os.path.exists(db_path):

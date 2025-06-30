@@ -1,5 +1,5 @@
 __pycache__/
 .ropeproject
 myenv/
-instance/test.db
+instance/
 keys/
