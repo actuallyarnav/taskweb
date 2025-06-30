@@ -22,12 +22,15 @@ def index():
         task_content = request.form['content']
         new_task = Todo(content=task_content) #type: ignore
 
+        #attempt to add a new task
         try:
             db.session.add(new_task)
             db.session.commit()
             return redirect('/')
+
+        #if a new task couldn't be added
         except:
-            return "There was a problem adding your task"
+            return "There was a problem adding your task."
 
     else:
         tasks = Todo.query.order_by(Todo.date_created).all()
@@ -66,4 +69,4 @@ if __name__ == "__main__":
             db.create_all()
             print("Database created.")
 
-    app.run(debug=True)
+    app.run(host='0.0.0.0', debug=True)
