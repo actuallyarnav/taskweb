@@ -3,9 +3,9 @@ from flask import Flask, redirect, render_template, request
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime, UTC
 
-
+project_root_dir = os.path.abspath(os.path.dirname(__file__))
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///test.db"
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(project_root_dir, 'data', 'tasks.db')
 db = SQLAlchemy(app)
 
 class Todo(db.Model):
