@@ -75,4 +75,4 @@ if __name__ == "__main__":
             db.create_all()
             print("Database created.")
 
-    app.run(host='0.0.0.0', debug=True)
+    app.run(port=5000, debug=True)

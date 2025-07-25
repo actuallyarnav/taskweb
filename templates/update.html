@@ -8,11 +8,12 @@
         <form action="/update/{{task.id}}" method="POST">
             <input
                 type="text"
+                class="form-control"
                 name="content"
                 id="content"
                 value="{{task.content}}"
             />
-            <input type="submit" value="Update task" />
+            <input type="submit" class="btn btn-primary" value="Update task" />
         </form>
     </div>
 </div>
