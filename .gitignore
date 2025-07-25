@@ -3,4 +3,5 @@ __pycache__/
 myenv/
 instance/
 keys/
+/data
 stuff/
